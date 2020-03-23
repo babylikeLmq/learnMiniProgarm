@@ -1,3 +1,6 @@
 <!--pages/home/home.wxml-->
 <text class="title">Hello World!</text>
 <button size="mini">按钮</button>
+
+<view>第一天学习:知识点1</view>
+<view>学习了微信小程序的基础</view>
