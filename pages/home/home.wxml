@@ -1,3 +1,25 @@
 <!--pages/home/home.wxml-->
 <text class="title">Hello World!</text>
 <button size="mini">按钮</button>
+<!-- 1.数据绑定 -->
+<view>我的名字:{{name}}</view>
+<view>{{age}}</view>
+
+<!-- 2.列表展示 -->
+<!--2-1 原始办法: -->
+<text>列表展示:原始办法</text>
+<view>{{students[0].name}}--{{students[0].age}}</view>
+<view>{{students[1].name}}--{{students[1].age}}</view>
+<view>{{students[2].name}}--{{students[2].age}}</view>
+<view>{{students[3].name}}--{{students[3].age}}</view>
+
+<!-- 2.2 wx:for -->
+<text>列表展示:wx:for</text>
+<view wx:for="{{students}}">{{item.name}}--{{item.age}}</view>
+<!-- 3.事件监听改变data -->
+<view>当前计数: {{counter}}</view>
+<button size="mini" bindtap='handleBtnClick'>+</button>
+<button size="mini" bindtap='handleSubtraction'>-</button> 
+
+<view>{{msg}}</view>
+<button size="mini" bindtap="changeMeHobby">改变我的爱好按钮</button>

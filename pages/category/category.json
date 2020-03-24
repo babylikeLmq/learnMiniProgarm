@@ -1,0 +1,8 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "商品分类",
+  "enablePullDownRefresh": true,
+  "navigationBarTextStyle": "black"
+
+
+}
