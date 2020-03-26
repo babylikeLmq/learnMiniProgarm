@@ -1,0 +1,39 @@
+<!--pages/image/image.wxml-->
+<!--1. image：组件 -->
+<!-- 1.默认有大小 320x240 在所有机型下都是-->
+<!-- 2.可以设置单标签 或者 双标签  -->
+<!-- 3.是inline-block -->
+<image/>
+<text>哈哈哈哈哈哈哈哈哈哈</text>
+
+
+<!-- 2.本地图片和远程图片 -->
+<!-- 相对路径是从自己文件下开始找 -->
+<image src="../../assets/img/che.jpg"></image>
+<!-- 绝对路径从/目录下开始找 -->
+<image src="/assets/img/che.jpg"></image>
+<image src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg"></image>
+
+<!-- 3.补充 -->
+<!-- 从相册选择图片/拍照图片打开 -->
+<button bindtap="handleChooseAblum">选中图片</button>
+<image src="{{imagePath}}"/>
+
+<!-- lazy-load 图片懒加载 -->
+<!-- bindload 监听图片加载完成 -->
+<view>-----------------------------------------</view>
+
+<image
+  wx:for="{{10}}"
+ src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1585209693216&di=e5cb383628ae2b4fdb21a8069dfa9f48&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201602%2F02%2F20160202010850_j8d4e.jpeg"
+  bindload="handleImageLoad"
+ lazy-load="{{true}}"
+ 
+ />
+
+<!-- 4.show-menu-by-longpress开启长按图片显示识别小程序码菜单  -->
+<image src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1923559453,2542615224&fm=26&gp=0.jpg"
+
+show-menu-by-longpress ></image>
+<view>===============================</view>
+<!-- 5.binderror  当错误发生时触发，event.detail = {errMsg}-->

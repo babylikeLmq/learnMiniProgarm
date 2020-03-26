@@ -1,0 +1,43 @@
+<!--pages/input/input.wxml-->
+<!--1.input的基本使用 input 默认没有边框 透明色 -->
+<input></input>
+<!-- 2.value:input中的默认值 -->
+<input value="默认值"></input>
+
+<!-- 3.type:决定键盘的类型
+type 的合法值:(文本输入键盘/数字/身份证/带小数点的数字键盘) -->
+<input placeholder="文本输入键盘" type="text"></input>
+<input placeholder="数字输入键盘" type="number"></input>
+<input placeholder="身份证输入键盘" type="idcard"></input>
+<input placeholder="带小数点的数字键盘" type="digit"></input>
+
+<!-- 4.password :暗文 -->
+<input placeholder="明文输入显示暗文" password></input>
+
+<!-- 5.placeholder :输入框为空时占位符 -->
+<input placeholder="占位的"></input>
+
+<!-- 6.confirm-type  点击键盘右下角按钮时是否保持键盘不收起 -->
+<input  placeholder="send:右下角按钮为“发送”" confirm-type="send"></input>
+<input  placeholder="search:右下角按钮为“搜索”	" confirm-type="search"></input>
+<input  placeholder="next:右下角按钮为“下一个”" confirm-type="next"></input>
+<input  placeholder="go:右下角按钮为“前往”" confirm-type="go"></input>
+<input  placeholder="done:右下角按钮为“完成”" confirm-type="done"></input>
+
+<!-- 7.maxlength 最大输入长度，设置为 -1 的时候不限制最大长度  默认:140 -->
+<input placeholder="最多输入11位数字" type="number" maxlength="11"></input>
+
+<!-- 8.input的绑定事件 -->
+<!-- bindinput 键盘输入时触发，event.detail = {value, cursor, keyCode}，keyCode 为键值， -->
+<!-- 2.1.0 起支持，处理函数可以直接 return 一个字符串，将替换输入框的内容。 -->
+<!-- bindfocus 输入框聚焦时触发，event.detail = { value, height }，height 为键盘高度，在基础库 1.9.90 起支持 -->
+<!-- bindblur 输入框失去焦点时触发，event.detail = {value: value} -->
+
+<!-- 可以用tab键  代替鼠标点击   -->
+<input placeholder="输入 获取焦点失去焦点时触发事件" 
+ bindinput="handleInput"
+ bindfocus="handleFocus"
+ bindblur="handleBlur"/>
+ 
+ <!-- 展示我输入的内容： -->
+ <view>{{message}}</view>
