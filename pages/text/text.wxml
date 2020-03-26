@@ -1,0 +1,23 @@
+<!--pages/text/text.wxml-->
+
+<!-- text组件 -->
+<!-- 1.基本用法 相当于span 行内元素-->
+<text>hello world</text>
+<text>很高兴遇见你 小程序\n</text>
+<!-- 2.selectable :true -->
+<!-- 选中text的文本 -->
+<text selextable="{{true}}">选中text的文本\n</text>
+<text selextable>选中text的文本\n</text>
+<!-- 3.space 决定文本的空白大小 -->
+
+<text>hello world</text>
+<text space="nbsp">hello world\n</text>
+<!-- 中文字符的一半 -->
+<text space="ensp">hello world\n</text>
+<!-- 一个中文字符 -->
+<text space="emsp">hello world\n</text>
+
+<!-- 4.decode属性 ：是否解码文本 -->
+<text decode>5 &gt; 3\n</text>
+<text decode="{{true}}">5 &gt; 3\n</text>
+<text decode="{{false}}">5 &gt; 3\n</text>

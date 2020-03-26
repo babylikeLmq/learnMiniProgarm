@@ -1,0 +1,25 @@
+<!--pages/button/button.wxml-->
+<!-- 基本使用:很大个 -->
+<button>按钮</button>
+<!-- 2.size属性:mini -->
+<button size='mini'>按钮</button>
+<button size='mini'>按钮\n</button>
+
+<!-- 3.type=属性  primary default warn -->
+<button size='mini' type='primary'>按钮</button>
+<button size='mini' type='default'>按钮</button>
+<button size='mini' type='warn'>按钮</button>
+
+<!-- 4.plain :镂空效果 -->
+<button size='mini' plain="{{true}}">按钮</button>
+<button size='mini' plain>按钮</button>
+
+<!-- 5.disable 点击不了 用不了 -->
+<button size="mini" disabled>按钮</button>
+<!-- 6.loading 中间转圈圈 -->
+<button size="mini" loading>按钮</button>
+<!-- isLoading 动态改变 true /false -->
+<button size="mini" loading="{{isLoading}}">按钮</button>
+
+<!-- 按下去变红 hover-class='pressed' -->
+<button  hover-class='pressed' >按钮</button>
