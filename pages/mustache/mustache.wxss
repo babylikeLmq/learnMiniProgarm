@@ -1,0 +1,8 @@
+/* pages/mustache/mustache.wxss */
+.active{
+  color: red;
+} 
+.box{
+  font-size: 32px;
+  font-weight: 800;
+}

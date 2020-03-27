@@ -1,0 +1,14 @@
+<!--pages/mustache/mustache.wxml-->
+
+
+<!-- mustache语法: -->
+<view>{{message}}</view>
+<view>{{firstName+' '+lastName}}</view>
+<view>{{firstName}} {{lastName}}</view>
+<!-- age=20 -->
+<view>{{age >= 18?'成年人':'未成年人'}}</view>
+<view>{{nowTime}}</view>
+
+<!-- 点击改变字体颜色 -->
+<button size="mini" bindtap="handleChaneColor">切换颜色</button>
+<view class='box  {{isShow ? "active" :"" }}'>字体变身</view>
