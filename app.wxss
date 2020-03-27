@@ -1,0 +1,11 @@
+/* app.wxss */
+@import './style/btn.wxss';
+
+.container{
+  color: blue;
+ font-size: 32px;
+
+}
+.yenei{
+  background-color: blue;
+}
