@@ -4,6 +4,6 @@
     "pages/wxss/wxss",
     "pages/home/home",
     "pages/about/about"
-   
-  ]
+  ],
+  "sitemapLocation": "sitemap41.json"
 }

@@ -1,5 +1,6 @@
 <!--pages/mustache/mustache.wxml-->
-
+<!-- 导入标题 -->
+<include src="/wxml/header.wxml"/>
 
 <!-- mustache语法: -->
 <view>{{message}}</view>
@@ -11,4 +12,164 @@
 
 <!-- 点击改变字体颜色 -->
 <button size="mini" bindtap="handleChaneColor">切换颜色</button>
-<view class='box  {{isShow ? "active" :"" }}'>字体变身</view>
+<view class='box  {{isActive ? "active" :"" }}'>字体变身</view>
+
+<view>=======条件判断======</view>
+<!-- 1.wx:if的使用 -->
+<!-- 错误写法: -->
+<!-- <view disable="{{isShow}}">哈哈哈哈哈哈哈哈哈哈哈哈</view> -->
+<view wx:if="{{isShow}}">哈啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊 点击出现哦</view>
+<button style="background-color:red;color:white" bindtap="handleSwitchFontShow">切换按钮</button>
+
+<!-- 2.wx:if/elif/else -->
+<button style="color:purple" bindtap="handleIncrement">每点击一次增加5</button>
+<view wx:if="{{score >= 90}}">您的成绩为:优秀</view>
+<view wx:elif="{{score >=80}}">您的成绩为:良好</view>
+<view wx:elif="{{score >=60}}">您的成绩为:及格</view>
+<view wx:else>您的成绩为:不及格</view>
+
+<!-- 是否让组件隐藏: -->
+<!-- 隐藏 -->
+<view hidden="{{true}}">我是hidden属性控制的内容 hidden隐藏</view>
+<view wx:if="{{false}}">我是hidden属性控制的内容 wx:if隐藏</view>
+<!-- 不隐藏 -->
+<view hidden="{{false}}">我是hidden属性控制的内容 不隐藏</view>
+<view wx:if="{{true}}">我是hidden属性控制的内容 不隐藏</view>
+
+
+<!-- 两者隐藏有什么区别:  -->
+<!-- hidden 属性组件是 没有被销毁的  通过样式display:none  用于:切换频繁-->
+<!-- wx:if 组件是直接 没有创建 -->
+
+
+<!-- 列表渲染 -->
+<!-- wx:for -->
+<view wx:for = "{{['car','foot','child','home']}}">{{item}}</view>
+<view wx:for="{{10}}">{{item}}</view>
+<view wx:for='lumingqing'>{{item}}-- {{index}}</view>
+
+
+<!-- 如果有很多组件需要隐藏 -->
+<view wx:if='{{false}}'>我要隐藏</view>
+<view wx:if='{{false}}'>我也要隐藏</view>
+<view wx:if='{{false}}'>我更需要隐藏</view>
+
+
+<view>-------------------隔离-------------</view>
+<!-- 一个一个加太麻烦 但是多一个view组件 渲染会浪费性能-->
+<view wx:if="{{true}}">
+  <view>我要隐藏</view>
+  <view>我也要隐藏</view>
+  <view>我更需要隐藏</view> 
+</view>
+
+<block wx:if="{{true}}">
+<view>我要隐藏</view>
+  <view>我也要隐藏</view>
+  <view>我更需要隐藏</view>
+</block>
+
+
+<button bindtap="handleSwitchFontShow">按钮点击下文内容出现</button>
+<block wx:if="{{isShow}}">
+<view>我喜欢吃芒果</view>
+<view>我喜欢吃芒果</view>
+<view>我喜欢吃芒果</view>
+<view>我喜欢吃芒果</view>
+<view>我喜欢吃芒果</view>
+<view>我喜欢吃芒果</view>
+<view>我喜欢吃芒果</view>
+<view>我喜欢吃芒果</view>
+<view>我喜欢吃芒果</view>
+<view>我喜欢吃芒果</view>
+</block> 
+
+<view>遍历3遍的文本</view>
+<block wx:for="{{3}}">
+<view>哈哈哈001</view> 
+<view>哈哈哈002</view>
+<view>哈哈哈003</view>
+</block>
+
+<!-- 遍历数组中的电影 -->
+<view>------------恐怖电影-----------</view>
+<!-- 给item index 起名字 -->
+<view wx:for="{{movies}}" wx:for-item="movie" wx:for-index="order">{{order}}-{{movie}}</view>
+
+
+<!-- 起别名不能加-(横杆)  起别名应用二维数组-->
+
+<!-- 有两个item容易混淆 -->
+<!-- <block  wx:for="{{array}}">
+  <block wx:for="{{item}}">
+    <view >{{item}}</view>
+  </block>
+</block> -->
+
+<!-- 正确: 可以加下划线 不可以加短横杆 -->
+<block  wx:for="{{array}}"wx:for-item="inner_item">
+  <block wx:for="{{inner_item}}">
+    <view >{{item}}</view>
+  </block>
+</block>
+
+<!-- key:作用 -->
+<view wx:for="{{letters}}">{{item}}</view>
+
+
+<view>----------------template--------------------</view>
+<!-- 定义模板 multiplex  复用的意思 -->
+<!-- <template name="multiplexTemplate">
+  <button size="mini">按钮</button>
+  <view>我是按钮文本</view>
+</template> -->
+
+<!-- 使用模板 -->
+<!-- <template is="multiplexTemplate"></template> -->
+<!-- 习惯使用单便签 -->
+<template is="multiplexTemplate"/>
+
+<!-- 不想每一使用的模板参数都是一样的  button:按钮/警告/点击/登录-->
+
+
+<!-- <template name="multiplexTemplate">
+  <button size="mini">{{btnText}}</button>
+  <view>{{content}}</view>
+</template> -->
+<!-- 不是这样导入 -->
+<!-- @import '' -->
+<!-- 注意不是scr  是src -->
+<!-- 绝对路径 -->
+<!-- <import scr="/wxml/template.wxml"/> -->
+<!-- 相对路径 -->
+<import src="../../wxml/template.wxml"/>
+
+
+<template is="multiplexTemplate" data="{{btnText:'按钮',content:'我是按钮,哈哈哈'}}"/>
+<template is="multiplexTemplate" data="{{btnText:'登录',content:'我是登录,嘻嘻嘻'}}"/>
+<template is="multiplexTemplate" data="{{btnText:'点击',content:'我是点击,呵呵呵'}}"/>
+<template is="multiplexTemplate" data="{{btnText:'警告',content:'我是警告,嘿嘿嘿'}}"/>
+
+
+
+<!-- 我想定义一个模板多处复用 -->
+<!-- 新建一个目录-wxml 起一个文件template.wxml 最后在需要的页面导入 -->
+
+
+<!-- ps:不能将模板嵌套在别的模板中  再导入一个模板 -->
+<!-- 他自己没有嵌套之前可以显示 -->
+<import src="/wxml/abc.wxml"/>
+<template is="abc"></template>
+<!-- 
+<import src="/wxml/qiandao.wxml"/>
+<template is="qiantao"></template> -->
+
+<!-- 即使上面导入了template模板 也没有显示qiantao模板内容  -->
+<template is="qiantao"></template>
+
+<!--include导入 不能导入template -->
+<include src="/wxml/tryToIncludeTemplate.wxml"/>
+<template is="tryToInTemp"></template>
+
+<!-- 导入尾部 -->
+<include src="/wxml/footer.wxml"/>

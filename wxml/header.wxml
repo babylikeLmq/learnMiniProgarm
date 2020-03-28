@@ -1,0 +1,6 @@
+<!-- <include src="./nav.wxml"/> -->
+<view style="background-color:blue">
+<!-- 写里面外面都可以 支持循环导入 -->
+  <include src="./nav.wxml"/>
+  <view>标题</view>
+</view>
