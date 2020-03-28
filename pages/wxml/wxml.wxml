@@ -1,0 +1,53 @@
+<!--pages/wxml/wxml.wxml-->
+<text>pages/wxml/wxml.wxml</text>
+
+
+<view>{{25.454621231}}</view>
+
+<!-- 导出是： 赋值时= -->
+<!-- <wxs module="info">
+var msg='测试wxs';
+var foo='foo';
+
+module.exports={
+  msg:msg
+  foo:foo
+}
+</wxs> -->
+
+<wxs module="m1">
+var msg = "hello world";
+
+module.exports.message = msg;
+</wxs>
+
+<view> {{m1.message}} </view>
+
+
+<wxs src="../../wxs/info.wxs" module='info'/>
+<!-- <wxs/> 单标签引入 必须使用相对路径  -->
+
+<view>{{info.msg}}</view>
+<view>{{info.foo}}</view>
+<view>{{info.sum(20,50)}}</view>
+<view>{{info.bar('i love you')}}</view>
+
+<!-- 3.wxs的应用 -->
+
+<!-- format 是format.wxs内置的对象 每个 wxs 模块均有一个内置的 module 对象。 -->
+<wxs src="../../wxs/format.wxs" module="format"/>
+<view>{{format.priceToFormat(price,3)}}</view>
+<view>{{format.priceToFormat(price)}}</view>
+<view>{{format.priceToFormat(price,5)}}</view>
+
+
+<!-- 时间戳 -->
+<!-- 第一个参数为当前时间戳，第二个参数为指定时间输出格式，如下 -->
+<wxs module="dateUtil" src="../../wxs/timeUtil.wxs"></wxs>
+
+<!-- js中定义data :time  -->
+
+<view>{{dateUtil.dateFormat(time,'yyyy/MM/dd hh:mm:ss')}}</view>
+
+
+

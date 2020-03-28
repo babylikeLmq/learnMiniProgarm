@@ -1,0 +1,19 @@
+
+var msg = '测试wxs';
+var foo = "'hello world' from info.wxs";
+
+var bar = function(d) {
+  return d;
+}
+var sum = function(num1,num2){
+  return num1 + num2
+}
+// 导出格式也不能简写
+module.exports = {
+  msg:msg,
+  foo:foo,
+  bar:bar,
+  sum:sum
+
+}
+
