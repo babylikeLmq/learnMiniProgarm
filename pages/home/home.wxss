@@ -2,3 +2,45 @@
 .title{
   color: red
 }
+.box{
+ width: 100px;
+ height: 100px; 
+ background-color: violet;
+}
+.div1{
+  background-color: slateblue;
+  width: 200rpx;
+  height: 200rpx;
+  color: aliceblue;
+}
+.div2{
+  background-color:sandybrown;
+  width: 400rpx;
+  height: 400rpx;
+  color: aliceblue;
+}
+
+.container{
+  background-color: violet;
+  display: flex;
+}
+.item{
+  color: white;
+  flex: 1;
+  text-align: center;
+}
+#outer1{
+  width: 600rpx;
+  height: 600rpx;
+  background-color: tomato;
+}
+#middle1{
+  width: 400rpx;
+  height: 400rpx;
+  background-color: blue;
+}
+#inner1{
+  width: 200rpx;
+  height: 200rpx;
+  background-color: springgreen;
+}

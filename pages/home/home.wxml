@@ -1,3 +1,61 @@
 <!--pages/home/home.wxml-->
-<text class="title">Hello World!</text>
-<button size="mini">按钮</button>
+<!-- 1.事件的回顾 -->
+<button bindtap="handleBtnClick" size="mini">按钮</button>
+<button bind:tap="handleBtnClick" size="mini">按钮</button>
+<button catch:tap="handleBtnClick" size="mini">按钮</button>
+
+<!-- 2.常见的一些事件 -->
+<view class="box"
+  bind:touchstart="handleTouchStart"    
+  bind:touchmove="handleTouchMove"    
+  bind:touchend="handleTouchEnd"    
+  bind:tap="handleTap"    
+  bind:longpress="handleLongpress"    
+
+
+></view>
+<!-- 3.事件的解析 -->
+<button size="mini" bindtap="handleEventClick"
+bind:touchend="handleEventEnd">事件对象</button>
+
+<!-- currenttarget 与 target的区别 -->
+
+<view class="div2" id="outer" bindtap="handleOuter">外层
+<view class="div1" id="inner" bindtap="handleInner">内层</view>
+</view>
+
+<!-- 4.事件参数的传递 -->
+<!-- <view>
+  <block>
+    <view>潮流</view>
+    <view>娱乐</view>
+    <view>篮球</view>
+  </block>
+</view> -->
+
+
+<!-- 需求点击潮流可以获取他的下标值 -->
+<view class="container">
+  <block wx:for="{{titles}}" wx:key="{{index}}">
+    <view class="item" bindtap="handleItemClickClick"
+    data-diyIndex="{{index}}"
+    data-diyItem="{{item}}"
+    >{{item}}</view>
+  </block>
+</view>
+
+<!--事件冒泡和捕获： -->
+<!-- 点击 inner view 会先后调用handleTap3和handleTap2(因为tap事件会冒泡到 middle view，
+而 middle view 阻止了 tap 事件冒泡，不再向父节点传递)，
+点击 middle view 会触发handleTap2，点击 outer view 会触发handleTap1。 -->
+<view id="outer1" capture-bind:tap="handleCaptureView1" bindtap="handleTap1">
+  outer view
+  <view id="middle1" capture-catch:tap="handleCaptureView2" catchtap="handleTap2">
+    middle view
+    <view id="inner1" capture-bind:tap="handleCaptureView3" bindtap="handleTap3">
+      inner view
+    </view>
+  </view>
+</view>
+<!-- bind:是一层层传递 -->
+<!-- catch关键字可以中断捕获阶段和取消冒泡阶段。 -->
