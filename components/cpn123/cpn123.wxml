@@ -1,0 +1,2 @@
+<!--components/cpn123/cpn123.wxml-->
+<view class="text">我是cpn123组件 我在my-cpn组件中注册</view>

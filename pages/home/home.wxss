@@ -2,3 +2,38 @@
 .title{
   color: red
 }
+.blue{
+  /* 组件自己的样式高于传入的样式 */
+  color: black;
+  border: 3px solid blue;
+}
+.purple{
+  border: 3px solid purple;
+}
+.green{
+  border: 3px solid green;
+}
+.black{
+  border: 3px solid black;
+}
+
+.weight1{
+  font-size: 20rpx;
+  color:black;
+ font-weight: bold;
+}
+.weight2{
+  font-size: 30rpx;
+  color:black;
+ font-weight:700;
+}
+.weight3{
+  font-size: 40rpx;
+  color:black;
+ font-weight: 700;
+}
+.weight4{
+  font-size: 50rpx;
+  color:black;
+ font-weight: 700;
+}

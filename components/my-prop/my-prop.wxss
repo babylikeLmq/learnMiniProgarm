@@ -1,0 +1,12 @@
+/* components/my-prop/my-prop.wxss */
+.title{
+  font-size: 50rpx;
+  color: yellowgreen;
+  font-weight: 700;
+}
+.container{
+  /* font-size: 30rpx; */
+  background-color: tomato;
+  /* color: teal; */
+ 
+}

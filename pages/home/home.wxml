@@ -1,3 +1,28 @@
 <!--pages/home/home.wxml-->
-<text class="title">Hello World!</text>
-<button size="mini">按钮</button>
+<!-- <my-cpn></my-cpn>
+<my-cpn/>
+
+<tryToEveryAdd/> -->
+<!-- <view>------------------------------------------------</view> -->
+<!-- 1.自定义组件的使用 -->
+<!-- home.wxml中也有 title container 相同的class名 但是与组件my-style的样式互不影响 -->
+
+<!-- <text class="title">Hello World!</text>
+<view class="container">我是home组件的内容</view>
+<button size="mini">按钮</button> -->
+
+
+<!-- 2.自定义事件样式的使用 -->
+<!-- <my-style/> -->
+
+<!-- 3.给组件传递数据 -->
+<my-prop title="我是Diy标题哈哈哈" titleclass="blue" containerclass="weight1"/>
+<my-prop title="我是Diy标题嘿嘿嘿" titleclass="green" containerclass="weight2"/>
+<my-prop title="我是Diy标题呵呵呵" titleclass="purple" containerclass="weight3"/>
+<my-prop titleclass="black"  containerclass="weight4"/>
+
+<!-- 监听组件发射出来的事件  bind:事件名 -->
+<view>当前计数:{{counter}}</view>
+<my-event  bind:increment="handleIncrement" bind:subtraction="handleSubtraction"/>
+<view>{{name}}</view>
+<view>{{id}}</view>

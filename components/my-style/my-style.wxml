@@ -1,0 +1,3 @@
+<!--components/my-style/my-style.wxml-->
+<view class="title">我是style组件</view>
+<view class="container" id="tryCanShow">我是style组件的内容</view>

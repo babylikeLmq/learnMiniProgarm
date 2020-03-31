@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "cpn123":"/components/cpn123/cpn123"
+  }
+}

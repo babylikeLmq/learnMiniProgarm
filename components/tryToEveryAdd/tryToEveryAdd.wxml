@@ -1,0 +1,4 @@
+<!--components/tryToEveryAdd/tryToEveryAdd.wxml-->
+<view>我只在全局中注册</view>
+
+

@@ -1,0 +1,4 @@
+<!--components/my-cpm/my-cpm.wxml-->
+<view class="title">{{title}}</view>
+<view>我是组件的内容</view>
+<cpn123/>

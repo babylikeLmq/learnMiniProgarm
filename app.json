@@ -1,8 +1,10 @@
 {
   "pages": [
-
     "pages/home/home",
     "pages/about/about"
-   
-  ]
+  ],
+  "usingComponents": {
+    "tryToEveryAdd":"/components/tryToEveryAdd/tryToEveryAdd"
+  },
+  "sitemapLocation": "sitemap2.json"
 }

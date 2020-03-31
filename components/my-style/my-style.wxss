@@ -1,0 +1,18 @@
+/* components/my-style/my-style.wxss */
+.title{
+  font-size: 50rpx;
+  border:2px solid springgreen;
+  background-color:yellow;
+  font-weight: 900;
+}
+.container{
+  background-color: sienna;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* 测试除了class选择器 别的选择器可不可以用 */
+#tryCanShow{
+    border: 2px solid blue;
+
+}

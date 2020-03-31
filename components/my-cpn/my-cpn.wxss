@@ -1,0 +1,5 @@
+/* components/my-cpm/my-cpm.wxss */
+.title{
+  background-color: burlywood;
+  font-size: 32px;
+}
